@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "symfony/framework-bundle": "2.0.*",
+        "symfony/framework-bundle": "2.1.*",
         "zendframework/zendframework": "2.0.*"
     },
     "autoload": {
