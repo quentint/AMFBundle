@@ -70,7 +70,4 @@ Add routing to the gateway controller
 Example App
 -----------
 
-See [AMFBundle-sandbox][2]
-
 [1]: https://github.com/tecbot/JMSSerializerBundle
-[2]: https://github.com/tecbot/AMFBundle-sandbox
