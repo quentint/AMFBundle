@@ -1,6 +1,6 @@
 {
-    "name":         "tecbot/amf-bundle",
-    "description":  "Tecbot AMFBundle",
+    "name":         "rodchyn/amf-bundle",
+    "description":  "Rodchyn AMFBundle",
     "keywords":     ["amf"],
     "type":         "symfony-bundle",
     "authors": [
