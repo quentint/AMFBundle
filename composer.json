@@ -9,6 +9,12 @@
             "email":    "thomas.adam@tebot.de"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        }
+    ],
     "require": {
         "symfony/framework-bundle": "2.1.*",
         "zendframework/zend-amf": "2.0.*"
