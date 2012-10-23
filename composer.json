@@ -1,6 +1,6 @@
 {
-    "name":         "tecbot/amf-bundle",
-    "description":  "Tecbot AMFBundle",
+    "name":         "responsive-code/amf-bundle",
+    "description":  "Responsive-Code AMFBundle",
     "keywords":     ["amf"],
     "type":         "symfony-bundle",
     "authors": [
