@@ -21,7 +21,7 @@
     ],
     "require": {
         "symfony/framework-bundle": "2.1.*",
-        "zendframework/zendamf": "*"
+        "zendframework/zendamf": "dev-master"
     },
     "autoload": {
         "psr-0": {
