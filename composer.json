@@ -13,6 +13,10 @@
         {
             "type": "composer",
             "url": "http://packages.zendframework.com/"
+        },
+        {
+            "type": "vcs",
+            "url": "git://github.com/zendframework/ZendAmf.git"
         }
     ],
     "require": {
