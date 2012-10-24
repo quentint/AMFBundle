@@ -21,8 +21,8 @@
     },
     "autoload": {
         "psr-0": {
-            "RC\\AMFBundle": ""
+            "Tecbot\\AMFBundle": ""
         }
     },
-    "target-dir": "RC/AMFBundle"
+    "target-dir": "Tecbot/AMFBundle"
 }
