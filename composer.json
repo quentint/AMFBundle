@@ -21,7 +21,8 @@
     ],
     "require": {
         "symfony/framework-bundle": "2.1.*",
-        "zendframework/zendamf": "dev-master",
+        "zendframework/zendamf": "2.0.*",
+	"zendframework/zend-permissions-acl": "2.0.*",
 	"zendframework/zendframework": "2.0.*"
     },
     "autoload": {
