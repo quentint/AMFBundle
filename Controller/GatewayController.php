@@ -21,7 +21,7 @@ class GatewayController
     /**
      * Handle the Amf request
      *
-     * @return Symfony\Component\HttpFoundation\Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function gatewayAction()
     {

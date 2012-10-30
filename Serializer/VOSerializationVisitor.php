@@ -3,10 +3,11 @@
 namespace Tecbot\AMFBundle\Serializer;
 
 use JMS\SerializerBundle\Metadata\ClassMetadata;
+use Tecbot\AMFBundle\Metadata\ClassMetadata as AmfClassMetadata;
 use JMS\SerializerBundle\Metadata\PropertyMetadata;
 use JMS\SerializerBundle\Serializer\GenericSerializationVisitor;
 
-use Zend\Amf\Value\Messaging\ArrayCollection;
+use ZendAmf\Value\Messaging\ArrayCollection;
 
 
 /**
@@ -90,6 +91,13 @@ class VOSerializationVisitor extends GenericSerializationVisitor
         return false;
     }
 
+    /**
+     * @param \Tecbot\AMFBundle\Metadata\ClassMetadata $metadata
+     * @param array                                    $data
+     * @param string                                   $type
+     *
+     * @return void
+     */
     public function startVisitingObject(ClassMetadata $metadata, $data, $type)
     {
         if (null === $this->root) {
@@ -100,6 +108,13 @@ class VOSerializationVisitor extends GenericSerializationVisitor
         $this->data = null === $metadata->voClass ? array() : new $metadata->voClass;
     }
 
+    /**
+     * @param \Tecbot\AMFBundle\Metadata\ClassMetadata $metadata
+     * @param array                                    $data
+     * @param string                                   $type
+     *
+     * @return mixed
+     */
     public function endVisitingObject(ClassMetadata $metadata, $data, $type)
     {
         $rs = $this->data;

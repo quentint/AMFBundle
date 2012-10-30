@@ -26,10 +26,10 @@ class YamlDriver extends BaseYamlDriver
         $config = $config[$class->getName()];
 
         if (isset($config['vo_class'])) {
-            $metadata->voClass = (string)$config['vo_class'];
+            $classMetadata->voClass = (string)$config['vo_class'];
         }
 
-        return $metadata;
+        return $classMetadata;
     }
 
     protected function getExtension()

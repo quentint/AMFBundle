@@ -12,15 +12,16 @@ use Tecbot\AMFBundle\Event\FilterServiceEvent;
 use Tecbot\AMFBundle\Event\GetBodyResponseEvent;
 use Tecbot\AMFBundle\Event\GetBodyResponseForExceptionEvent;
 use Tecbot\AMFBundle\HttpFoundation\Response;
-use Zend\Amf\Constants;
-use Zend\Amf\Parser\TypeLoader;
-use Zend\Amf\Request\StreamRequest;
-use Zend\Amf\Response\StreamResponse;
-use Zend\Amf\Value\MessageBody;
-use Zend\Amf\Value\Messaging\AcknowledgeMessage;
-use Zend\Amf\Value\Messaging\CommandMessage;
-use Zend\Amf\Value\Messaging\ErrorMessage;
-use Zend\Amf\Value\Messaging\RemotingMessage;
+
+use ZendAmf\Constants;
+use ZendAmf\Parser\TypeLoader;
+use ZendAmf\Request\StreamRequest;
+use ZendAmf\Response\StreamResponse;
+use ZendAmf\Value\MessageBody;
+use ZendAmf\Value\Messaging\AcknowledgeMessage;
+use ZendAmf\Value\Messaging\CommandMessage;
+use ZendAmf\Value\Messaging\ErrorMessage;
+use ZendAmf\Value\Messaging\RemotingMessage;
 
 class Server
 {
@@ -35,7 +36,7 @@ class Server
      *
      * @param EventDispatcherInterface    $dispatcher An EventDispatcherInterface instance
      * @param ContainerInterface          $container  A ContainerInterface instance
-     * @param ControllerResolverInterface $resolver   A ControllerResolverInterface instance
+     * @param ServiceResolverInterface $resolver   A ControllerResolverInterface instance
      * @param Boolean                     $debug      Debug mode
      * @param array                       $mappings   An array of mapped classes
      */
@@ -108,7 +109,7 @@ class Server
         $bodies = $request->getAmfBodies();
         foreach ($bodies as $body) {
             $message = null;
-            /* @var $body \Zend\Amf\Value\MessageBody */
+            /* @var $body \ZendAmf\Value\MessageBody */
             try {
                 if (Constants::AMF0_OBJECT_ENCODING === $objectEncoding) {
                     // AMF0 Object Encoding
