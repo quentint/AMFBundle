@@ -22,7 +22,6 @@
     "require": {
         "symfony/framework-bundle": "2.1.*",
         "zendframework/zendamf": "2.0.*",
-        "zendframework/zendframework": "2.0.*"
     },
     "autoload": {
         "psr-0": {
