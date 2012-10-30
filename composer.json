@@ -16,12 +16,12 @@
         },
         {
             "type": "vcs",
-            "url": "git://github.com/zendframework/ZendAmf.git"
+            "url": "git://github.com/Reizwerk/ZendAmf.git"
         }
     ],
     "require": {
         "symfony/framework-bundle": "2.1.*",
-        "zendframework/zendamf": "2.0.*"
+        "zendframework/zendamf": "dev-master"
     },
     "autoload": {
         "psr-0": {
