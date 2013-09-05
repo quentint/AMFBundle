@@ -21,7 +21,7 @@
     ],
     "require": {
         "symfony/symfony": "2.3.*",
-        "creatiombe/zendamf": "dev-master",
+        "creatiombe/zendamf": "dev-master"
     },
     "autoload": {
         "psr-0": {
