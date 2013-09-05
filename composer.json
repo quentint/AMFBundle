@@ -1,6 +1,6 @@
 {
-    "name":         "responsive-code/amf-bundle",
-    "description":  "Responsive-Code AMFBundle",
+    "name":         "creatiombe/amf-bundle",
+    "description":  "Creatiom AMFBundle",
     "keywords":     ["amf"],
     "type":         "symfony-bundle",
     "authors": [
@@ -16,12 +16,12 @@
         },
         {
             "type": "vcs",
-            "url": "git://github.com/Reizwerk/ZendAmf.git"
+            "url": "https://github.com/creatiombe/ZendAmf"
         }
     ],
     "require": {
-        "symfony/framework-bundle": "2.1.*",
-        "zendframework/zendamf": "dev-master"
+        "symfony/symfony": "2.3.*",
+        "creatiombe/zendamf": "dev-master",
     },
     "autoload": {
         "psr-0": {
