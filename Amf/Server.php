@@ -12,6 +12,7 @@ use Tecbot\AMFBundle\Event\FilterServiceEvent;
 use Tecbot\AMFBundle\Event\GetBodyResponseEvent;
 use Tecbot\AMFBundle\Event\GetBodyResponseForExceptionEvent;
 use Tecbot\AMFBundle\HttpFoundation\Response;
+use Tecbot\AMFBundle\Collections\PersistentCollectionVO;
 
 use ZendAmf\Constants;
 use ZendAmf\Parser\TypeLoader;
@@ -22,6 +23,7 @@ use ZendAmf\Value\Messaging\AcknowledgeMessage;
 use ZendAmf\Value\Messaging\CommandMessage;
 use ZendAmf\Value\Messaging\ErrorMessage;
 use ZendAmf\Value\Messaging\RemotingMessage;
+use Doctrine\ORM\PersistentCollection;
 
 class Server
 {
@@ -50,6 +52,8 @@ class Server
         foreach ($mappings as $alias => $mapping) {
             TypeLoader::setMapping($alias, $mapping['class']);
         }
+        TypeLoader::setMapping('flex.io.messaging.ArrayCollection', '\Tecbot\AMFBundle\Collections\PersistentCollectionVO');
+
     }
 
     /**
@@ -132,9 +136,11 @@ class Server
                     if ($message instanceof CommandMessage) {
                         // async call with command message
                         $return = $this->loadCommandMessage($message);
+
                     } elseif ($message instanceof RemotingMessage) {
                         $return = new AcknowledgeMessage($message);
                         $return->body = $this->handleBodyRequest(new BodyRequest($message->operation, $message->body, $message->source));
+
                     } else {
                         // Amf3 message sent with netConnection
                         $targetURI = $body->getTargetURI();
@@ -146,6 +152,7 @@ class Server
                             // Break off method name from namespace into source
                             $method = substr(strrchr($targetURI, '.'), 1);
                             $return = $this->handleBodyRequest(new BodyRequest($method, $body->getData(), $source));
+
                         } else {
                             throw new \RuntimeException(sprintf('Unable to find the Amf service. targetURI: %s, service: %s', $targetURI, $source));
                         }
@@ -177,6 +184,7 @@ class Server
             $responseURI = $body->getResponseURI() . $responseType;
             $newBody = new MessageBody($responseURI, null, $return);
             $response->addAmfBody($newBody);
+
         }
 
         return $response;
@@ -192,12 +200,15 @@ class Server
      */
     protected function handleBodyRequest(BodyRequest $bodyRequest)
     {
+
         // request
         $event = new GetBodyResponseEvent($bodyRequest);
         $this->dispatcher->dispatch(AmfEvents::BODY_REQUEST, $event);
 
         if ($event->hasBodyResponse()) {
+
             return $event->getBodyResponse();
+
         }
 
         // load service
