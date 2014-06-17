@@ -1,6 +1,6 @@
 {
-    "name":         "creatiombe/amf-bundle",
-    "description":  "Creatiom AMFBundle",
+    "name":         "quentint/amf-bundle",
+    "description":  "AMFBundle",
     "keywords":     ["amf"],
     "type":         "symfony-bundle",
     "authors": [
@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "symfony/symfony": "2.3.*",
+        "symfony/symfony": ">=2.4.6",
         "creatiombe/zendamf": "dev-master"
     },
     "autoload": {
