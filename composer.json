@@ -15,8 +15,8 @@
             "url": "http://packages.zendframework.com/"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/creatiombe/ZendAmf"
+            "type": "git",
+            "url": "https://github.com/creatiombe/ZendAmf.git"
         }
     ],
     "require": {
